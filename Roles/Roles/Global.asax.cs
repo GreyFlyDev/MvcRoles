@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Roles.Helpers;
+using Roles.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,8 @@ namespace Roles
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            ApplicationDbContext context = new ApplicationDbContext();
+            IdentityHelper.SeedIdEntities(context);
         }
     }
 }
